@@ -2,19 +2,31 @@ import { AppBar, Toolbar, makeStyles } from "@material-ui/core";
 import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   bar: {
-    background: "#2C2C2C",
+    background: "#E2D6D6",
+    fontWeight: "Bold",
     height: 60,
     paddingRight: 40,
     boxShadow: "none",
     justifyContent: "center",
-    borderBottom: "solid black 3px",
   },
-  link: {},
+  link: {
+    textDecoration: "none",
+    color: "#2C2C2C",
+    "&:hover": {
+      color: "#968E8E",
+    },
+  },
   currentLink: {},
   toolBar: {
     display: "flex",
     justifyContent: "space-between",
     textDecoration: "none",
+  },
+  navLinks: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "100%",
   },
 }));
 
@@ -23,7 +35,7 @@ function NavBar(props) {
   return (
     <AppBar position="fixed" className={classes.bar}>
       <Toolbar className={classes.toolBar}>
-        <div className={classes.navlinks}>
+        <div className={classes.navLinks}>
           <Link
             to="/about"
             className={
@@ -31,6 +43,14 @@ function NavBar(props) {
             }
           >
             about
+          </Link>
+          <Link
+            to="/skills"
+            className={
+              props.page === "skills " ? classes.currentLink : classes.link
+            }
+          >
+            skills
           </Link>
           <Link
             to="/projects"
@@ -46,7 +66,7 @@ function NavBar(props) {
               props.page === "contact " ? classes.currentLink : classes.link
             }
           >
-            conact
+            contact
           </Link>
         </div>
       </Toolbar>
