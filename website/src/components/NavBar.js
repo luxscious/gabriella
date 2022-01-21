@@ -36,38 +36,19 @@ function NavBar(props) {
     <AppBar position="fixed" className={classes.bar}>
       <Toolbar className={classes.toolBar}>
         <div className={classes.navLinks}>
-          <Link
-            to="/about"
-            className={
-              props.page === "about " ? classes.currentLink : classes.link
-            }
-          >
+          <a href="#about" className={classes.link}>
             about
-          </Link>
-          <Link
-            to="/skills"
-            className={
-              props.page === "skills " ? classes.currentLink : classes.link
-            }
-          >
+          </a>
+          <a href="#skills" className={classes.link}>
             skills
-          </Link>
-          <Link
-            to="/projects"
-            className={
-              props.page === "projects " ? classes.currentLink : classes.link
-            }
-          >
+          </a>
+
+          <a href="#projects" className={classes.link}>
             projects
-          </Link>
-          <Link
-            to="/contact"
-            className={
-              props.page === "contact " ? classes.currentLink : classes.link
-            }
-          >
+          </a>
+          <a href="#contact" className={classes.link}>
             contact
-          </Link>
+          </a>
         </div>
       </Toolbar>
     </AppBar>
