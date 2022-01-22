@@ -8,6 +8,12 @@ import $ from "jquery";
 import profPic from "./assets/picture.svg";
 import "./App.css";
 import { useState } from "react";
+import ProjectCard from "./components/ProjectCard.js";
+import linkedIn from "./assets/contact/linkedin.svg";
+import github from "./assets/contact/github.svg";
+import email from "./assets/contact/email.svg";
+import devpost from "./assets/contact/devpost.svg";
+
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
@@ -122,13 +128,17 @@ const useStyles = makeStyles((theme) => ({
     minHeight: window.innerHeight,
     backgroundColor: "#E2D6D6",
     display: "flex",
+    flexDirection: "column",
     paddingBottom: 20,
+    paddingTop: 50,
   },
   sectionFive: {
     width: "100%",
     minHeight: 400,
     backgroundColor: "#2C2C2C",
     display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
     paddingBottom: 20,
   },
   sectionSix: {
@@ -137,6 +147,16 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     backgroundColor: "#E2D6D6",
     color: "black",
+  },
+  projects: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    margin: "auto",
+  },
+  contacts: {
+    paddingLeft: 10,
+    paddingRight: 10,
   },
 }));
 
@@ -175,7 +195,9 @@ function App() {
   const softSkills = importAll(
     require.context("./assets/skills/soft", false, /\.(png|jpe?g|svg)$/)
   );
-
+  const projects = importAll(
+    require.context("./assets/projects", false, /\.(png|jpe?g|svg)$/)
+  );
   $(window).on("scroll", function () {
     setScroll(this.scrollY);
   });
@@ -187,7 +209,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <div className={classes.container}>
+      <div id={"page"} className={classes.container}>
         <div className={classes.sectionOne}>
           <div className={classes.hello}>
             <div
@@ -243,7 +265,6 @@ function App() {
           <div
             style={{
               display: "flex",
-
               flexDirection: "column",
               justifyContent: "center",
               minHeight: window.innerHeight,
@@ -272,8 +293,107 @@ function App() {
             </div>
           </div>
         </div>
-        <div id="projects" className={classes.sectionFour}></div>
-        <div id="contact" className={classes.sectionFive}></div>
+        <div id="projects" className={classes.sectionFour}>
+          <h1
+            style={{
+              textAlign: "center",
+              paddingBottom: 5,
+              color: "black",
+              textDecoration: "underline",
+            }}
+          >
+            Projects
+          </h1>
+          <div className={classes.projects}>
+            <ProjectCard
+              name={"spacetagram"}
+              image={projects[4]}
+              demo={"https://luxscious.github.io/spacetagram/"}
+              github={"https://github.com/luxscious/spacetagram"}
+            />
+            <ProjectCard
+              name={"Hive"}
+              image={projects[3]}
+              github={"https://github.com/luxscious/hive"}
+              devpost={"https://devpost.com/software/hive-thl07v"}
+            />
+            <ProjectCard
+              name={"Val-T"}
+              image={projects[5]}
+              github={"https://github.com/luxscious/val-t"}
+            />
+            <ProjectCard
+              name={"RiSync"}
+              image={projects[0]}
+              github={"https://github.com/luxscious/risync"}
+              demo={""}
+              devpost={"https://devpost.com/software/jet-lag-fixer"}
+            />
+            <ProjectCard
+              name={"Travel Buddy"}
+              image={projects[1]}
+              github={"https://github.com/luxscious/TAMUHACK2021"}
+              demo={""}
+              devpost={"https://devpost.com/software/travel-buddy-wh873z"}
+            />
+            <ProjectCard
+              name={"We Growth"}
+              image={projects[2]}
+              github={"https://github.com/luxscious/HackersNest"}
+              devpost={"https://devpost.com/software/branched-out"}
+            />
+          </div>
+        </div>
+        <div id="contact" className={classes.sectionFive}>
+          <h1
+            style={{
+              color: "#FFD7E5",
+              marginLeft: "auto",
+              marginRight: "auto",
+              paddingBottom: 50,
+            }}
+          >
+            Contact/Links
+          </h1>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "100%",
+            }}
+          >
+            <a
+              href="https://www.linkedin.com/in/gabriella-gerges/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img className={classes.contacts} src={linkedIn} alt="linkedIn" />
+            </a>
+            <a
+              href="https://github.com/luxscious"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img className={classes.contacts} src={github} alt="linkedIn" />
+            </a>
+            <a
+              href="mailto:ggerges019@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img className={classes.contacts} src={email} alt="linkedIn" />
+            </a>
+            <a
+              href="https://devpost.com/luxscious?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img className={classes.contacts} src={devpost} alt="linkedIn" />
+            </a>
+          </div>
+        </div>
         <div className={classes.sectionSix}>
           <p>Gabriella Gerges, 2022</p>
         </div>

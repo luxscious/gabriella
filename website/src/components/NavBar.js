@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: 40,
     boxShadow: "none",
     justifyContent: "center",
+    marginBottom: 60,
   },
   link: {
     textDecoration: "none",
@@ -36,6 +37,13 @@ function NavBar(props) {
     <AppBar position="fixed" className={classes.bar}>
       <Toolbar className={classes.toolBar}>
         <div className={classes.navLinks}>
+          <a
+            href="/#page"
+            style={{ fontFamily: "Bad Script" }}
+            className={classes.link}
+          >
+            {"<G/>"}
+          </a>
           <a href="#about" className={classes.link}>
             about
           </a>
