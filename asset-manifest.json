@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/gabriella/static/css/main.1ef5ba48.css",
-    "main.js": "/gabriella/static/js/main.db92103c.js",
+    "main.js": "/gabriella/static/js/main.4529b4d2.js",
     "static/media/picture.svg": "/gabriella/static/media/picture.8cba9269c0fde1a94d1e047eb6ecc51a.svg",
     "static/media/valt.svg": "/gabriella/static/media/valt.90412db072a5f21d30d8.svg",
     "static/media/WeGrowth.svg": "/gabriella/static/media/WeGrowth.467779066fe921b9b39d.svg",
@@ -35,10 +35,10 @@
     "static/media/section_1.svg": "/gabriella/static/media/section_1.37c71f4e55716bea8ce2ece61d530e73.svg",
     "static/media/section_2.svg": "/gabriella/static/media/section_2.ab8c90a742383234d3f86dfc9a2d78f4.svg",
     "main.1ef5ba48.css.map": "/gabriella/static/css/main.1ef5ba48.css.map",
-    "main.db92103c.js.map": "/gabriella/static/js/main.db92103c.js.map"
+    "main.4529b4d2.js.map": "/gabriella/static/js/main.4529b4d2.js.map"
   },
   "entrypoints": [
     "static/css/main.1ef5ba48.css",
-    "static/js/main.db92103c.js"
+    "static/js/main.4529b4d2.js"
   ]
 }
