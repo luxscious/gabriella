@@ -13,6 +13,7 @@ import linkedIn from "./assets/contact/linkedin.svg";
 import github from "./assets/contact/github.svg";
 import email from "./assets/contact/email.svg";
 import devpost from "./assets/contact/devpost.svg";
+import Tooltip from "@mui/material/Tooltip";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -120,7 +121,9 @@ const useStyles = makeStyles((theme) => ({
     alignContent: "center",
   },
   skillIcon: {
-    padding: 20,
+    paddingTop: 20,
+    paddingRight: 20,
+    paddingLeft: 20,
   },
 
   sectionFour: {
@@ -157,6 +160,10 @@ const useStyles = makeStyles((theme) => ({
   contacts: {
     paddingLeft: 10,
     paddingRight: 10,
+    "&:hover": {
+      width: 100,
+      height: 100,
+    },
   },
 }));
 
@@ -273,21 +280,27 @@ function App() {
             <h1 style={{ paddingLeft: "10%" }}>Top Skills</h1>
             <div className={classes.skills}>
               {topSkills.map((x) => {
+                const skill = x.split("/")[3].split(".")[0];
                 return (
-                  <div className={classes.skillIcon}>
-                    <img class="icon" src={x} alt="icon" />
-                  </div>
+                  <Tooltip title={skill}>
+                    <div className={classes.skillIcon}>
+                      <img class="icon" src={x} alt="icon" />
+                    </div>
+                  </Tooltip>
                 );
               })}
             </div>
 
-            <h1 style={{ paddingLeft: "10%" }}>Soft Skills</h1>
+            <h1 style={{ paddingLeft: "10%", paddingTop: 20 }}>Soft Skills</h1>
             <div className={classes.skills}>
               {softSkills.map((x) => {
+                const skill = x.split("/")[3].split(".")[0];
                 return (
-                  <div className={classes.skillIcon}>
-                    <img class="icon" src={x} alt="icon" />
-                  </div>
+                  <Tooltip title={skill}>
+                    <div className={classes.skillIcon}>
+                      <img class="icon" src={x} alt="icon" />
+                    </div>
+                  </Tooltip>
                 );
               })}
             </div>

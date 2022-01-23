@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     color: "#2C2C2C",
     "&:hover": {
-      color: "#968E8E",
+      color: "white",
     },
   },
   currentLink: {},

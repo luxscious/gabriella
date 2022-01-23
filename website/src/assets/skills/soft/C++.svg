@@ -1,6 +1,8 @@
 <svg width="111" height="112" viewBox="0 0 111 112" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <ellipse cx="55.5" cy="56" rx="55.5" ry="56" fill="#FDEFEF"/>
-<rect x="22" y="18" width="67.6056" height="76" fill="url(#pattern0)"/>
+<rect x="22" y="18" width="67.6056" height="76" fill="url(#pattern0)">
+<title>C++</title>
+</rect>
 <defs>
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_25_118" transform="scale(0.000833333)"/>
